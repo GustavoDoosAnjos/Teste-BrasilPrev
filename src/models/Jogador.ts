@@ -1,16 +1,16 @@
 import { Propriedade } from './Propriedade';
 
-type TipoJogador = 'impulsivo' | 'exigente' | 'cauteloso' | 'aleatório';
+type TipoJogador = 'impulsivo' | 'exigente' | 'cauteloso' | 'aleatorio';
 
 export class Jogador {
-  name: string;
+  nome: string;
   saldo: number;
   tipoJogador: TipoJogador;
   propriedades: Propriedade[];
   posicao: number;
 
-  constructor(name: string, tipoJogador: TipoJogador) {
-    this.name = name;
+  constructor(nome: string, tipoJogador: TipoJogador) {
+    this.nome = nome;
     this.tipoJogador = tipoJogador;
     this.saldo = 300;
     this.posicao = 0;
@@ -27,7 +27,7 @@ export class Jogador {
         return propriedade.aluguel > 50;
       case 'cauteloso':
         return this.saldo - propriedade.preco >= 80;
-      case 'aleatório':
+      case 'aleatorio':
         return Math.random() > 0.5;
       default:
         return false;

@@ -9,11 +9,7 @@ export class Tabuleiro {
   constructor() {
     this.propriedades = Array.from(
       { length: this.tamanho },
-      (_) =>
-        new Propriedade(
-          Math.floor(Math.random() * 200),
-          Math.floor(Math.random() * 70)
-        )
+      (_) => new Propriedade(Math.floor(Math.random() * 200) + 100, Math.floor(Math.random() * 50) + 20)
     );
   }
 }
